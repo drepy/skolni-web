@@ -29,6 +29,26 @@ body {
 	    max-width: 1300px;
 	}
 }
+@media (min-width: 1500px) {
+	.container {
+	    max-width: 1400px;
+	}
+}
+@media (min-width: 1600px) {
+	.container {
+	    max-width: 1500px;
+	}
+}
+@media (min-width: 1700px) {
+	.container {
+	    max-width: 1600px;
+	}
+}
+@media (min-width: 1800px) {
+	.container {
+	    max-width: 1700px;
+	}
+}
 iframe { 
 	max-width: 100%;
 }
@@ -118,7 +138,7 @@ img {
 	transform: rotate(-135deg);
 }
 .main {
-	background: url(assets/images/bg.png) no-repeat #F3F4F7;
+	background: url(assets/images/bg.png) repeat #F3F4F7;
 	min-height: 700px;
 }
 .team h2 {
@@ -153,27 +173,33 @@ img {
     font-weight: 500;
 }
 .header ul li a:hover, .header ul li.active a {
-	color: var(--primary);
+	color: #CC1B2C;
 	text-decoration: none;
 }
 
 /* SUBMENU START */
 
-.header li .sub-menu{
+.header ul .sub-menu{
     display:none;
     position: absolute;
     top: 100%;
     left: 0;
     background: #283349;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+	z-index: 999;
 }
 .header .menu-item-has-children:hover .sub-menu{
     display: block;
-
+	z-index: 999;
+}
+.header .menu-item-has-children:hover .sub-menu a{
+    display: block;
+	z-index: 999;
 }
 
 
 /* SUBMENU KONEC */
+
 .header-logo {
 	display: flex;
    
@@ -188,6 +214,8 @@ img {
 }
 .header-text {
 	margin-left: 1rem;
+	text-decoration: underline;
+	text-decoration-color: #CC1B2C;
 }
 .header-text .header-text-main {
 	font-size: 22px;
@@ -200,6 +228,10 @@ img {
 	color: #9C9C9C;
 	font-size: 11px;
 	font-weight: 300;
+}
+
+.banner-posts-item .banner-posts-item-text{
+	width: 100%;
 }
 @media (max-width: 1500px) { 
 	.header {
@@ -294,6 +326,11 @@ img {
 	align-items: center;
 	border-top: 2px solid var(--secondary);
 	background-color: #0C142B;
+	position: absolute;
+	bottom: -200%;
+	width: 100%;
+	left: 0;
+	margin-top: auto;
 }
 .footer-logo{
 	display: flex;
@@ -366,28 +403,19 @@ img {
 
 /* POSTY */
 .banner-posts {
-	width: 55%;
 	margin-left: auto;
 	display: flex;
-	margin-top: -67px;
 	position: relative;
 	z-index: 2;
 }
 .banner-posts-item {
 	display: flex;
 	background: white;
-	min-height: 132px;
 	box-shadow: 20px 40px 40px rgba(0, 0, 0, 0.1);
 	width: 100%;
-	max-width: 315px;
 	margin-right: 0.5rem;
 }
-.banner-posts-item-image {
-	display: flex;
-	max-width: 140px;
-	width: 100%;
-}
-.banner-posts-item-image img {
+.banner-posts-item img {
 	object-fit: cover;
 	object-position: center;
 	height: 100%;
@@ -432,6 +460,9 @@ img {
 	color: #707070;
 	font-size: 12px;
 	margin-top: 0.5rem;
+}
+.banner-posts-item-img{
+	width: 50%;
 }
 
 @media (max-width: 776px) { 

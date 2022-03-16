@@ -17,27 +17,37 @@ $args = array(
 );
 $posts = get_posts($args);
 ?>
-
-<div class="posts">
-    <div class="row">
-        <?php
-            foreach($posts as $key => $post){
-                ?>
-                    <div class="col-12">
-                        <div class="banner-posts-item">
-                            <img src='<?= get_field('hlavni_obrazek', $post->ID)['url'] ?>' alt='<?= $post->post_title ?>' />
-                            <div class="banner-posts-item-text">
-                                <span class="banner-posts-item-date"><?= $post->post_date_gmt ?></span>
-                                <span class="banner-posts-item-heading"><?= $post->post_title ?></span>
-                                <span class="banner-posts-item-content"><?= $post->post_text ?></span>
-                                <a href='<?= $post->guid ?>' class="banner-posts-items-link"><span>Více</span></a>
-                            </div>
-                        </div>
-                    </div>
+<div class="container mt-5">
+<div class="row">
+    <div class="col-lg-7">
+        <div class="posts">
+            <div class="row">
                 <?php
-            }
-        ?>
+                    foreach($posts as $key => $post){
+                        ?>
+                            <div class="col-12 mb-4">
+                                <div class="banner-posts-item">
+                                    <div class="banner-posts-item-img">
+                                        <img src='<?= get_field('hlavni_obrazek', $post->ID)['url'] ?>' alt='<?= $post->post_title ?>' />
+                                    </div>
+                                    <div class="banner-posts-item-text">
+                                        <span class="banner-posts-item-date"><?= $post->post_date_gmt ?></span>
+                                        <span class="banner-posts-item-heading"><?= $post->post_title ?></span>
+                                        <span class="banner-posts-item-content"><?= substr(strip_tags($post->post_content), 0, 200); ?></span><p>...</p>
+                                        <a href='<?= $post->guid ?>' class="banner-posts-items-link"><span>Více</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
+            </div>
+        </div>
     </div>
+    <div class="col-lg-5">
+            <p>jsem kokot</p>
+    </div>
+</div>
 </div>
 
 <?php
