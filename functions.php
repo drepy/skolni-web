@@ -35,3 +35,19 @@ function get_wp_footer_menu() {
 function sortFunction( $a, $b ) {
   return strtotime($a["datum"]) - strtotime($b["datum"]);
 }
+
+/* Widgety */
+add_theme_support('widgets');
+
+function my_sidebars() {
+  register_sidebar(
+      array(
+         'name' => 'Page Sidebar',
+         'id' => 'page-sidebar',
+         'before-title' => '<h4 class="widget-title">',
+         'after-title' => '</h4>' 
+      )
+  );
+
+}
+add_action('widgets_init', 'my_sidebars');

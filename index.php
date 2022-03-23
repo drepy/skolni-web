@@ -11,7 +11,7 @@ $page = get_page($id);
 if (is_front_page()){
     include 'homepage.php';
 } else {
-    if ($id==)
+    include 'subpage.php';
 }
 
 get_footer();
