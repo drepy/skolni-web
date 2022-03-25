@@ -1,4 +1,3 @@
-
 /* Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -10,9 +9,10 @@
 
 /* GLOBAL */
 
-body {
+html, body {
 	font-family: 'Avenir LT Pro', sans-serif;
 	width: 100%;
+	height:100%;
 }
 :root {
 	--primary: #CC1B2C;
@@ -140,7 +140,7 @@ img {
 }
 .main {
 	background: url(assets/images/bg.png) repeat #F3F4F7;
-	min-height: 700px;
+	min-height: 83.9%;
 }
 .team h2 {
 	font-size: 20px;
@@ -271,7 +271,7 @@ img {
 	}
 
 	.header .header-menu.open div > ul a{
-		color:var(--primary);
+		color: white;
 	}
 	.header .header-menu.open div > ul ul{
 		display: flex;
@@ -330,8 +330,8 @@ img {
 	border-top: 2px solid var(--secondary);
 	background-color: #0C142B;
 	position: absolute;
+	height:150px;
 	width: 100%;
-	height: 150px;
 	left: 0;
 }
 .footer-logo{
@@ -341,11 +341,22 @@ img {
 	margin: auto;
 	padding: auto;
 }
+.footer-adress{
+    color:white;
+    font-size:12px;
+    padding-left:20px;
+    display:flex;
+    flex-direction:column;
+}
 .footer .footer-text-main {
 	color: white;
 	font-family: "Montserrat", sans-serif;
+	font-weight:bold;
+	text-decoration: underline 1px var(--primary);
 	display: block;
 	line-height: 1;
+	padding-left:20px;
+	margin-bottom:5px;
 }
 .footer .footer-content {
 	display: flex;
@@ -355,6 +366,7 @@ img {
 }
 .footer ul {
 	display: flex;
+	flex-direction:column;
 	list-style: none;
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
@@ -364,7 +376,7 @@ img {
 	display: flex;
 	align-items: center;
 }
-.footer ul li::after {
+.footer ul li::before {
 	content: url(assets/icons/line.svg);
 	margin: 0 1rem;
 }
@@ -374,6 +386,11 @@ img {
 .footer ul li, .footer ul li a {
 	color: var(--secondary);
 	font-size: 13px;
+}
+
+.footer-zrizovatel {
+    width:70px;
+    height:70px;
 }
 
 
@@ -399,6 +416,15 @@ img {
 	}
 	.footer .header-logo {
 		margin-bottom: 1.5rem;
+	}
+	.footer{
+	    height:auto;
+	}
+	.footer-logo{
+	    margin-bottom:20px;
+	}
+	.footer-zrizovatel{
+	    margin-bottom:20px;
 	}
 	
 } 
@@ -449,7 +475,7 @@ img {
 .banner-posts-item-heading {
 	color: var(--secondary);
 	font-weight: 800;
-	font-size: 0.875rem;
+	font-size: 1.25rem;
 	margin-top: 0.25rem;
 }
 .posts .banner-posts-item {
@@ -464,7 +490,8 @@ img {
 	margin-top: 0.5rem;
 }
 .banner-posts-item-img{
-	width: 50%;
+	max-width: 50%;
+	width: 100%;
 }
 
 @media (max-width: 776px) { 
@@ -503,6 +530,24 @@ img {
 	.footer ul li::after {
 		display: none;
 	}
+	body {
+     overflow-x: hidden !important;
+    }
+    
+    .banner-posts-item{
+        flex-direction: column;
+    }
+    .banner-posts-item-img {
+        max-width:100%;
+    }
+    
+    .banner-posts-item-img img {
+        width:100%;
+    }
+    
+    .widget{
+        display:none;
+    }
 } 
 @media (max-width: 567px) { 
 	.sponsors {
@@ -512,24 +557,32 @@ img {
 		font-size: 2.5rem;
 	}
 	.header-text .header-text-main {
-		font-size: 18px;
+		font-size: 16px;
 	}
-	.header-logo img {
-		max-width: 50px;
+	.logo {
+		min-width: 50px;
+		width:60px;
+		height:60px;
 	}
+	.footer{
+	    height:auto;
+	}
+
 } 
-
-/* Školní psycholog */
-
-.psycholog-text{
-	text-align: justify;
-}
 
 /* Subpage */
 
 .subpage-text{
 	text-align: justify;
 }
+
+.subpage-text h2{
+	font-family:"Avenir LT Pro", sans-serif;
+	font-weight:bold;
+	font-size:42px;
+	margin-bottom:20px;
+}
+
 
 .has-large-font-size{
 	font-size: 22px;
@@ -550,9 +603,26 @@ img {
 }
 
 .widgettitle{
+    font-family:"Montserrat", sans-serif;
+    font-weight:bold;
 	text-align: center;
-	margin-bottom: 10px;
-	margin-top: 20px;
+	align-items:center;
+	padding-bottom: 10px;
+	padding-top: 20px;
+	color:white;
+	background-color:var(--secondary);
+	
+}
+
+#text-5 .textwidget ul{
+    list-style:none;
+    padding-left:20px;
+}
+
+
+#text-5 .textwidget ul li{
+    text-align: left;
+    font-size: 16px;
 }
 
 .widet .widget_search{
@@ -564,10 +634,234 @@ img {
 }
 
 #searchsubmit{
-	background-image: url(/assets/icons/search.svg);
-	background-repeat: no-repeat;
-	width: 40px;
-	height: 40px;
-	border: none;
-	font-size: 0;
+    border:none!important;
+    background-image:url("/assets/icons/search.svg")!important;
+    
 }
+
+
+#gallery-1 img{
+    border:none!important;
+}
+
+
+/* Slider */
+
+.banner {
+	margin-top: 4rem;
+	position: relative;
+}
+.banner .banner-item {
+	height: 100%;
+	display: flex;
+	width: 100%;
+	position: relative;
+	margin-bottom:20px;
+}
+.banner .banner-item .banner-text {
+	font-size: 48px;
+	font-weight: 900;
+	position: absolute;
+	top: 50px;
+	left: 25px;
+	color: white;
+	max-width: 600px;
+}
+.banner img {
+	width: 100%;
+	object-position: center;
+	object-fit: cover;
+	height: 415px;
+}
+.banner .owl-dots {
+	position: absolute;
+	left: 25px;
+	bottom: 25px;
+}
+.banner .owl-dots .owl-dot {
+	display: block;
+	width: 48px;
+	height: 4px;
+	background: white;
+	margin: 0 0.5rem
+}
+.banner .owl-dots .owl-dot.active {
+	background: var(--primary);
+}
+.banner .owl-dots .owl-dot span {
+	display: none!important;
+}
+
+/* Tabulky */
+
+@media (max-width: 767px) {
+	.tablepress-responsive-phone { display: block; }
+	.tablepress-responsive-phone thead { display: block; float: left; }
+	.tablepress-rtl.tablepress-responsive-phone thead { float: right; }
+	.tablepress-responsive-phone tfoot { display: none; }
+	.tablepress-responsive-phone tbody { display: block; width: auto; position: relative; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+	.tablepress-responsive-phone thead tr,
+	.tablepress-responsive-phone thead th,
+	.tablepress-responsive-phone tbody td { display: block; border: none; }
+	.tablepress-responsive-phone tbody td:empty:before { content: "\00a0"; } /* &nbsp; in empty cells, to prevent weird width/height issues */
+	.tablepress-responsive-phone tbody tr { display: inline-block; vertical-align: top; }
+	.tablepress-responsive-phone thead th { width: auto !important; }
+	.tablepress-responsive-phone thead tr th:not(:last-child) { border-bottom: 1px solid transparent; }
+	.tablepress-responsive-phone tbody tr td:not(:last-child) { border-bottom: 1px solid #dddddd; }
+	.dataTables_wrapper .tablepress-responsive-phone .sorting:after { transform: rotate(90deg); padding: 0; }
+	.dataTables_wrapper .tablepress-responsive-phone .sorting_asc:after { content: "\f0d9"; padding: 0 2px 0 0; }
+	.dataTables_wrapper .tablepress-responsive-phone .sorting_desc:after { content: "\f0dA"; padding: 0 1px 0 0; }
+}
+.tablepress-responsive-all { display: block; }
+.tablepress-responsive-all thead { display: block; float: left; }
+.tablepress-rtl.tablepress-responsive-all thead { float: right; }
+.tablepress-responsive-all tfoot { display: none; }
+.tablepress-responsive-all tbody { display: block; width: auto; position: relative; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+.tablepress-responsive-all thead tr,
+.tablepress-responsive-all thead th,
+.tablepress-responsive-all tbody td { display: block; border: none; }
+.tablepress-responsive-all tbody td:empty:before { content: "\00a0"; } /* &nbsp; in empty cells, to prevent weird width/height issues */
+.tablepress-responsive-all tbody tr { display: inline-block; vertical-align: top; }
+.tablepress-responsive-all thead th { width: auto !important; }
+.tablepress-responsive-all thead tr th:not(:last-child) { border-bottom: 1px solid transparent; }
+.tablepress-responsive-all tbody tr td:not(:last-child) { border-bottom: 1px solid #dddddd; }
+.dataTables_wrapper .tablepress-responsive-all .sorting:after { transform: rotate(90deg); padding: 0; }
+.dataTables_wrapper .tablepress-responsive-all .sorting_asc:after { content: "\f0d9"; padding: 0 2px 0 0; }
+.dataTables_wrapper .tablepress-responsive-all .sorting_desc:after { content: "\f0dA"; padding: 0 1px 0 0; }
+
+
+.dataTables_scroll .tablepress {
+	width: 100% !important;
+}
+
+.tablepress-responsive * {
+	word-break: normal;
+}
+
+.tablepress{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tablepress thead tr {
+    background-color: var(--secondary);
+    color: #ffffff;
+    text-align: left;
+}
+.tablepress th,
+.tablepress td {
+    padding: 12px 15px;
+}
+.tablepress tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tablepress tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tablepress tbody tr:last-of-type {
+    border-bottom: 2px solid var(--secondary);
+}
+.tablepress tbody tr.active-row {
+    font-weight: bold;
+    color: var(--secondary);
+}
+.tablepress caption{
+    display:none;
+}
+
+/* Galerie */
+
+.gallery { margin: 0 auto 18px; }
+.gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery-columns-2 .gallery-item { width: 50%; }
+.gallery-columns-4 .gallery-item { width: 25%; }
+.gallery img {
+	box-shadow: 0px 0px 4px #999;
+	border: 1px solid white;
+	padding: 8px;
+	background: #f2f2f2;
+}
+#gallery-1 img{
+    border:none;
+    background:white;
+    box-shadow:none;
+}
+
+.gallery img:hover {
+	background: white;
+}
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	height: 250px;
+	width:250px;
+	margin:20px;
+}
+.gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.gallery dl, .gallery dt { margin: 0; }
+.gallery br+br { display: none; }
+
+/* Stránkování */
+
+.pgntn-page-pagination-intro{
+    display:none;
+}
+
+.next{
+    display:none;
+}
+
+.prev{
+    display:none;
+}
+
+.page-numbers{
+    font-size:20px;
+    color:white;
+    background:var(--secondary);
+    border: solid 1px var(--secondary);
+    width:100%;
+    max-width:20px;
+    height:20px;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.current{
+    color:var(--primary);
+}
+
+.pgntn-page-pagination{
+    margin:auto;
+    margin-bottom:20px;
+}
+
+/* Ostatní */
+
+.wp-block-file__button{
+    display:none;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
